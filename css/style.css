@@ -10,7 +10,6 @@ html {
 
 body {
   overflow-x: hidden;
-  width: 100%;
   background: linear-gradient(135deg, #FDBB2D 0%, #22616e 50%, #3A1C71 100%);
 }
 
@@ -64,6 +63,7 @@ body {
   height: 30vh;
   background: url("../img/software-engineer-job-skills-1.jpg") no-repeat;
   background-size: cover;
+
 }
 
 .aboutSection .profileDetails {
@@ -82,6 +82,7 @@ body {
 
 .skillsSection {
   position: relative;
+  width: 100%;
   height: 100vh;
 }
 
@@ -95,6 +96,7 @@ body {
   position: absolute;
   width: 30vw;
   height: 30vh;
+  top: 5rem;
 }
 
 .skillsSection .skillSet_02 {
@@ -109,8 +111,9 @@ body {
   height: 30vh;
 }
 
-.projectsSection {
+.projectSection {
   position: relative;
+  width: 100%;
   height: 100vh;
 }
 
@@ -170,6 +173,7 @@ body {
 
 .contactMeSection {
   position: relative;
+  width: 100%;
   height: 100vh;
 }
 
@@ -177,4 +181,5 @@ body {
   position: absolute;
   width: 30vw;
   height: 30vh;
+  top: 0;
 }
