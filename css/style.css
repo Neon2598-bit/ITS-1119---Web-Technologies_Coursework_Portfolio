@@ -10,15 +10,18 @@ html {
 
 body {
   overflow-x: hidden;
-  min-height: 200vh;
   width: 100%;
   background: linear-gradient(135deg, #FDBB2D 0%, #22616e 50%, #3A1C71 100%);
 }
 
 :root{
-
   --my-nav-left: 110vmin;
   --my-navbox-width: 200.7vmin
+}
+
+.HeroSection {
+  width: 100%;
+  height: 100vh;
 }
 
 .HeroSectionBoxNav {
@@ -51,6 +54,8 @@ body {
 
 .aboutSection {
   position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .aboutSection .profileImage {
@@ -65,8 +70,6 @@ body {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 20rem;
-  left: 0;
   text-indent: 4rem;
   text-align: justify;
 }
@@ -75,42 +78,92 @@ body {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 32rem;
-  left: 0;
 }
 
 .skillsSection {
   position: relative;
+  height: 100vh;
 }
 
 .skillsSection .skillsTitle {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 37rem;
-  left: 0;
 }
 
 .skillsSection .skillSet_01 {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 45rem;
-  left: 0;
 }
 
 .skillsSection .skillSet_02 {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 50rem;
-  left: 0;
 }
 
 .skillsSection .skillSet_03 {
   position: absolute;
   width: 30vw;
   height: 30vh;
-  top: 55rem;
-  left: 0;
+}
+
+.projectsSection {
+  position: relative;
+  height: 100vh;
+}
+
+.projectSection > .projectSectionTitle {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+}
+
+.projectDetailsRectangle01 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  border: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.projectDetailsRectangle02 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  border: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.projectDetailsRectangle03 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  border: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.projectDetailsRectangle04 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  border: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.selectionEclipses {
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  border: 5px solid white;
+  background-color: #FDBB2D;
+}
+
+.changeProjectsButton {
+  position: absolute;
+  width: 10vw;
+  height: 10vh;
+  border: 5px solid white;
+  background-color: brown;
 }
