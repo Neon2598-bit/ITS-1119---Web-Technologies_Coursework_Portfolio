@@ -167,3 +167,14 @@ body {
   border: 5px solid white;
   background-color: brown;
 }
+
+.contactMeSection {
+  position: relative;
+  height: 100vh;
+}
+
+.contactMeSection .contactMeSectionTitle {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+}
