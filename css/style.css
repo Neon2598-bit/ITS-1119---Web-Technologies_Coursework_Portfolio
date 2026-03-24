@@ -24,7 +24,7 @@ body {
 }
 
 .HeroSectionBoxNav {
-  position: sticky;
+  position: fixed;
   top: 0;
   display: flex;
   background: rgba(255, 255, 255, 0.1);
@@ -34,8 +34,9 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   width: var(--my-navbox-width);
-  height: 8vmin;
+  height: 5rem;
   align-items: center;
+  z-index: 1;
 }
 
 .HeroSectionNAVBar ul {
@@ -49,6 +50,11 @@ body {
 .HeroSectionNAVBar ul li a {
   text-decoration: none;
   color: black;
+}
+
+.midContent {
+  position: absolute;
+  top: 10rem;
 }
 
 .aboutSection {
