@@ -4,9 +4,13 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 200vh;
   width: 100%;
   background: linear-gradient(135deg, #FDBB2D 0%, #22616e 50%, #3A1C71 100%);
 }
@@ -72,5 +76,41 @@ body {
   width: 30vw;
   height: 30vh;
   top: 32rem;
+  left: 0;
+}
+
+.skillsSection {
+  position: relative;
+}
+
+.skillsSection .skillsTitle {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 37rem;
+  left: 0;
+}
+
+.skillsSection .skillSet_01 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 45rem;
+  left: 0;
+}
+
+.skillsSection .skillSet_02 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 50rem;
+  left: 0;
+}
+
+.skillsSection .skillSet_03 {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 55rem;
   left: 0;
 }
