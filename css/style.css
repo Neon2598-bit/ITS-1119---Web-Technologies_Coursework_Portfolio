@@ -12,6 +12,7 @@ body {
 }
 
 :root{
+
   --my-nav-left: 111vmin;
   --my-navbox-width: 200.7vmin
 }
@@ -44,29 +45,24 @@ body {
   color: black;
 }
 
-#webgl-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-#tubes-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  background: transparent !important;  /* ADD THIS */
-  mix-blend-mode: screen;              /* ADD THIS - makes black areas transparent */
-}
-
-.HeroSection, .HeroSection * {
+.aboutSection {
   position: relative;
-  z-index: 3;
+}
+
+.aboutSection .profileImage {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  background: url("../img/software-engineer-job-skills-1.jpg") no-repeat;
+  background-size: cover;
+}
+
+.aboutSection .profileDetails {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 30rem;
+  left: 0;
+  text-indent: 4rem;
+  text-align: justify;
 }
