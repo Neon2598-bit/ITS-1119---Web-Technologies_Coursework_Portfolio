@@ -447,19 +447,30 @@ body {
   font-size: var(--my-skillSets-font-size);
 }
 
-/*.skillsSection .skillSet_02 {*/
-/*  position: absolute;*/
-/*  width: 30vw;*/
-/*  height: 30vh;*/
-/*  top: 10rem;*/
+/*.skillSet_01 {*/
+/*  position: relative;*/
 /*}*/
+.skillSet01DetailedRectangle {
+  position: absolute;
+  width: 32rem;
+  height: 35rem;
+  background-color: #00ffd5;
+  border-radius: 10%;
+}
 
-/*.skillsSection .skillSet_03 {*/
-/*  position: absolute;*/
-/*  width: 30vw;*/
-/*  height: 30vh;*/
-/*  top: 15rem;*/
-/*}*/
+.skillSet01DetailedRectangle .skillSet01DetailedRectangleTitle {
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+}
+
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 {
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+}
+
+
 
 .projectSection {
   position: relative;
