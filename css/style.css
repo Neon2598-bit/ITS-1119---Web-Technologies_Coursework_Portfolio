@@ -37,6 +37,8 @@ body {
         VARIABLES
 =========================== */
 :root{
+  /*Navigation Panel Variables*/
+
   --my-nav-left: 62rem;
   --my-navbox-width: 113.7rem;
   --my-navBox-top: 1.5rem;
@@ -44,6 +46,15 @@ body {
   --my-navbox-logo-left: 1rem;
   --my-navbox-links-font-size: 1.5rem;
   --my-navbox-links-gap: 4rem;
+
+  /*Middle Section Text Content Variables*/
+
+  --my-mid-heading1-top: 6rem;
+  --my-mid-heading1-left: 31rem;
+  --my-mid-heading2-top: 6rem;
+  --my-mid-heading2-left: 6rem;
+  --my-mid-heading3-top: 6rem;
+  --my-mid-heading3-left: 6rem;
 }
 
 .HeroSection {
@@ -129,28 +140,13 @@ body {
 .HeroSectionNAVBar ul li:nth-child(4) {animation-delay: 1.1s;}
 .HeroSectionNAVBar ul li:nth-child(5) {animation-delay: 1.4s;}
 
-.midContent {
-  position: relative;
-  top: 10rem;
-}
-
-/*.HeroSectionFrame2 {*/
-/*  position: absolute;*/
-/*  top: 100%;*/
-/*  left: 50%;*/
-/*  transform: translate(-50%, -50%);*/
-/*  font-size: 3rem;*/
-/*  font-weight: bold;*/
-/*}*/
-
 .HeroSectionTitle1 {
   position: absolute;
-  top: 100%;
+  top: 45%;
   left: 50%;
-  text-align: center;
   transform: translate(-50%, -50%);
+  text-align: center;
   font-size: 4rem;
-
 }
 
 .HeroSectionTitle1 .highlight {
@@ -166,6 +162,36 @@ body {
   0%   { background-position: 0% 0%; }
   50%  { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
+}
+
+.HeroSectionHeading2 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.HeroSectionHeading3 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.HeroSectionSocialLinksGroup {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.HeroSectionMidContentButton {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aboutSection {
