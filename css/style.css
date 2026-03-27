@@ -94,7 +94,6 @@ body {
   transition: all 0.25s ease;
   background: transparent;
   backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
 }
 
 .HeroSectionNAVBar ul li a:hover {
@@ -131,8 +130,42 @@ body {
 .HeroSectionNAVBar ul li:nth-child(5) {animation-delay: 1.4s;}
 
 .midContent {
-  position: absolute;
+  position: relative;
   top: 10rem;
+}
+
+/*.HeroSectionFrame2 {*/
+/*  position: absolute;*/
+/*  top: 100%;*/
+/*  left: 50%;*/
+/*  transform: translate(-50%, -50%);*/
+/*  font-size: 3rem;*/
+/*  font-weight: bold;*/
+/*}*/
+
+.HeroSectionTitle1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+
+}
+
+.HeroSectionTitle1 .highlight {
+  background: linear-gradient(135deg, #f472b6, #a78bfa, #38bdf8, #f472b6);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShift 4s ease infinite;
+}
+
+@keyframes textShift {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 .aboutSection {
