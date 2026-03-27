@@ -51,6 +51,11 @@ body {
 
   --my-profile-image-top: 7rem;
   --my-profile-image-left: 4rem;
+
+  --my-exp-group-skills-box-left: 5rem;
+  --my-exp-group-skills-box-right: 5rem;
+
+  --my-exp-group-project-box-left: 4rem;
 }
 
 .HeroSection {
@@ -302,6 +307,15 @@ body {
   left: var(--my-exp-group-left);
   gap: 5rem;
   font-size: 3rem;
+}
+
+.aboutSection .littleBitOfWorkExp .skillsBox {
+  margin-left: var(--my-exp-group-skills-box-left);
+  margin-right: var(--my-exp-group-skills-box-right);
+}
+
+.aboutSection .littleBitOfWorkExp .projectsBox {
+  margin-left: var(--my-exp-group-project-box-left);
 }
 
 .skillsSection {
