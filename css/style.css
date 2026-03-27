@@ -16,10 +16,10 @@ body {
 body {
   overflow-x: hidden;
   /*Background Color For Left To Rigt Bottom*/
-  background: linear-gradient(
-    135deg,
-    #6a11cb, #fc5c7d, #2575fc, #6a11cb
-  );
+  background: #03001e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   background-size: 400% 400%;
   animation: diagonalShift 6s ease infinite;
 }
@@ -28,9 +28,9 @@ body {
      ANIMATION BACKGROUND
 =========================== */
 @keyframes diagonalShift {
-  0%   { background-position: 0% 0%; }
+  0%   { background-position: 0 0; }
   50%  { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
+  100% { background-position: 0 0; }
 }
 
 /* ===========================
@@ -46,15 +46,6 @@ body {
   --my-navbox-logo-left: 1rem;
   --my-navbox-links-font-size: 1.5rem;
   --my-navbox-links-gap: 4rem;
-
-  /*Middle Section Text Content Variables*/
-
-  --my-mid-heading1-top: 6rem;
-  --my-mid-heading1-left: 31rem;
-  --my-mid-heading2-top: 6rem;
-  --my-mid-heading2-left: 6rem;
-  --my-mid-heading3-top: 6rem;
-  --my-mid-heading3-left: 6rem;
 }
 
 .HeroSection {
@@ -65,6 +56,7 @@ body {
 .HeroSectionTitle {
   position: absolute;
   left: var(--my-navbox-logo-left);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.5rem;
 }
 
@@ -73,13 +65,23 @@ body {
   top: var(--my-navBox-top);
   left: var(--my-navbox-left);
   display: flex;
-  background: rgba(255,255,255,0.08);
+  /*background: #00fff0;  !* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(to right, #0083fe, #00fff0);  !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to right, #0083fe, #00fff0); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+  /*backdrop-filter: blur(55px);*/
+  /*-webkit-backdrop-filter: blur(55px);*/
+  /*border: 1px solid rgba(255, 255, 255, 0.25);*/
+  /*border-radius: 16px;*/
+  /*box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),*/
+  /*inset 0 1px 0 rgba(255, 255, 255, 0.15);*/
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3),
-  inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+  inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  
   width: var(--my-navbox-width);
   height: 5rem;
   align-items: center;
@@ -97,7 +99,7 @@ body {
 
 .HeroSectionNAVBar ul li a {
   text-decoration: none;
-  color: black;
+  color: rgba(255, 255, 255, 0.8);
   display: block;
   padding: 10px 24px;
   border-radius: 20px;
@@ -108,12 +110,13 @@ body {
 }
 
 .HeroSectionNAVBar ul li a:hover {
-  color: black;
-  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background: #7635F3;
+  background: linear-gradient(315deg, #7635F3, #F7A628);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15),
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3),
   inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -150,7 +153,7 @@ body {
 }
 
 .HeroSectionTitle1 .highlight {
-  background: linear-gradient(135deg, #f472b6, #a78bfa, #38bdf8, #f472b6);
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7, #ff6fd8, #00d4ff);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -158,10 +161,14 @@ body {
   animation: textShift 4s ease infinite;
 }
 
+.HeroSectionTitle1 .plain {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 @keyframes textShift {
-  0%   { background-position: 0% 0%; }
+  0%   { background-position: 0 0; }
   50%  { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
+  100% { background-position: 0 0; }
 }
 
 .HeroSectionHeading2 {
@@ -192,6 +199,76 @@ body {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.midContent .HeroSectionSocialLinksGroup a {
+  text-decoration: none;
+}
+
+.HeroSectionMidContentButton .button-85{
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 .aboutSection {
