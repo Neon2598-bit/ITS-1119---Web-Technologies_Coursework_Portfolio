@@ -13,6 +13,29 @@ body {
   background: linear-gradient(135deg, #FDBB2D 0%, #22616e 50%, #3A1C71 100%);
 }
 
+body {
+  overflow-x: hidden;
+  /*Background Color For Left To Rigt Bottom*/
+  background: linear-gradient(
+    135deg,
+    #6a11cb, #fc5c7d, #2575fc, #6a11cb
+  );
+  background-size: 400% 400%;
+  animation: diagonalShift 6s ease infinite;
+}
+
+/* ===========================
+     ANIMATION BACKGROUND
+=========================== */
+@keyframes diagonalShift {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ===========================
+        VARIABLES
+=========================== */
 :root{
   --my-nav-left: 110vmin;
   --my-navbox-width: 200.7vmin
