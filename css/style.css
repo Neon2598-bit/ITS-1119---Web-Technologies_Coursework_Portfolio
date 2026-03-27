@@ -10,11 +10,6 @@ html {
 
 body {
   overflow-x: hidden;
-  background: linear-gradient(135deg, #FDBB2D 0%, #22616e 50%, #3A1C71 100%);
-}
-
-body {
-  overflow-x: hidden;
   /*Background Color For Left To Rigt Bottom*/
   background: #03001e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
@@ -46,6 +41,16 @@ body {
   --my-navbox-logo-left: 1rem;
   --my-navbox-links-font-size: 1.5rem;
   --my-navbox-links-gap: 4rem;
+
+  /*About Section Variables*/
+  --my-exp-group-top: 37rem;
+  --my-exp-group-left: 55rem;
+
+  --my-paragraph-top: 2rem;
+  --my-paragraph-left: 42rem;
+
+  --my-profile-image-top: 7rem;
+  --my-profile-image-left: 4rem;
 }
 
 .HeroSection {
@@ -65,15 +70,6 @@ body {
   top: var(--my-navBox-top);
   left: var(--my-navbox-left);
   display: flex;
-  /*background: #00fff0;  !* fallback for old browsers *!*/
-  /*background: -webkit-linear-gradient(to right, #0083fe, #00fff0);  !* Chrome 10-25, Safari 5.1-6 *!*/
-  /*background: linear-gradient(to right, #0083fe, #00fff0); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
-  /*backdrop-filter: blur(55px);*/
-  /*-webkit-backdrop-filter: blur(55px);*/
-  /*border: 1px solid rgba(255, 255, 255, 0.25);*/
-  /*border-radius: 16px;*/
-  /*box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),*/
-  /*inset 0 1px 0 rgba(255, 255, 255, 0.15);*/
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -81,7 +77,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
   inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  
+
   width: var(--my-navbox-width);
   height: 5rem;
   align-items: center;
@@ -279,25 +275,33 @@ body {
 
 .aboutSection .profileImage {
   position: absolute;
-  width: 30vw;
+  width: 20vw;
   height: 30vh;
+  border-radius: 50%;
   background: url("../img/software-engineer-job-skills-1.jpg") no-repeat;
   background-size: cover;
-
+  top: var(--my-profile-image-top);
+  left: var(--my-profile-image-left);
 }
 
 .aboutSection .profileDetails {
   position: absolute;
-  width: 30vw;
-  height: 30vh;
-  text-indent: 4rem;
+  width: 60vw;
+  height: 45vh;
+  text-indent: 15rem;
   text-align: justify;
+  top: var(--my-paragraph-top);
+  left: var(--my-paragraph-left);
+  font-size: 2rem;
 }
 
 .aboutSection .littleBitOfWorkExp {
   position: absolute;
-  width: 30vw;
-  height: 30vh;
+  display: inline-flex;
+  top: var(--my-exp-group-top);
+  left: var(--my-exp-group-left);
+  gap: 5rem;
+  font-size: 3rem;
 }
 
 .skillsSection {
