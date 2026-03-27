@@ -44,7 +44,7 @@ body {
 
   /*About Section Variables*/
   --my-exp-group-top: 37rem;
-  --my-exp-group-left: 55rem;
+  --my-exp-group-left: 46rem;
 
   --my-paragraph-top: 2rem;
   --my-paragraph-left: 42rem;
@@ -87,7 +87,6 @@ body {
   height: 5rem;
   align-items: center;
   z-index: 1;
-
 }
 
 .HeroSectionNAVBar ul {
@@ -310,14 +309,43 @@ body {
 }
 
 .aboutSection .littleBitOfWorkExp .skillsBox {
-  margin-left: var(--my-exp-group-skills-box-left);
-  margin-right: var(--my-exp-group-skills-box-right);
+  width: 15rem;
+  /*margin-left: var(--my-exp-group-skills-box-left);*/
+  /*margin-right: var(--my-exp-group-skills-box-right);*/
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.aboutSection .littleBitOfWorkExp .workExpBox {
+  width: 28rem;
+  /*margin-left: var(--my-exp-group-skills-box-left);*/
+  /*margin-right: var(--my-exp-group-skills-box-right);*/
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .aboutSection .littleBitOfWorkExp .projectsBox {
-  margin-left: var(--my-exp-group-project-box-left);
+  width: 15rem;
+  /*margin-left: var(--my-exp-group-project-box-left);*/
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.aboutSection .littleBitOfWorkExp h4 {
+  padding-left: 1rem;
+}
 /* Profile Image - slide in from left + float */
 .aboutSection .profileImage {
   animation: slideInLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards,
@@ -338,6 +366,34 @@ body {
 @keyframes floatUpDown {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-12px); }
+}
+
+.aboutSection .littleBitOfWorkExp div::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #ff0000, #ff7300, #fffb00,
+    #48ff00, #00ffd5, #002bff,
+    #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 400%;
+  border-radius: 18px;
+  z-index: -1;
+  animation: glowing-button-85 6s linear infinite;
+}
+
+.aboutSection .littleBitOfWorkExp div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 5, 25, 0.75);
+  border-radius: 16px;
+  z-index: -1;
 }
 
 .skillsSection {
