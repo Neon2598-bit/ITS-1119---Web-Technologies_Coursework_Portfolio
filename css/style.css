@@ -42,6 +42,8 @@ body {
   --my-navBox-top: 1.5rem;
   --my-navbox-left: 2.5rem;
   --my-navbox-logo-left: 1rem;
+  --my-navbox-links-font-size: 1.5rem;
+  --my-navbox-links-gap: 4rem;
 }
 
 .HeroSection {
@@ -52,6 +54,7 @@ body {
 .HeroSectionTitle {
   position: absolute;
   left: var(--my-navbox-logo-left);
+  font-size: 1.5rem;
 }
 
 .HeroSectionBoxNav {
@@ -77,13 +80,31 @@ body {
   display: inline-flex;
   list-style-type: none;
   margin-left: var(--my-nav-left);
-  font-size: 3vmin;
-  gap: 10vmin;
+  font-size: var(--my-navbox-links-font-size);
+  gap: var(--my-navbox-links-gap);
 }
 
 .HeroSectionNAVBar ul li a {
   text-decoration: none;
   color: black;
+  display: block;
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: 5px transparent;
+  transition: all 0.25s ease;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+.HeroSectionNAVBar ul li a:hover {
+  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15),
+  inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .HeroSectionNAVBar ul li {
