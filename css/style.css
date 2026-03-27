@@ -63,6 +63,33 @@ body {
   --my-skillSetGroup-gap: 10rem;
 
   --my-skillSets-font-size: 1.3rem;
+
+  --my-skillSet01-Rectangle-width: 24rem;
+  --my-skillSet01-Rectangle-height: 35rem;
+
+  --my-skillSet01-Rectangle-Title-top: 0.5rem;
+  --my-skillSet01-Rectangle-Title-left: 2rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-top: 10rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-left: 2rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius: 5rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1: 5rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2: 7rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div2-top: 1.4rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div2-left: 7rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div3-top: 3.5rem;
+
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div4-top: 3.55rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div4-left: 9rem;
+
+  --my-skillSet01-Rectangle-SkillSetDetail01-Font-Size: 0.8rem;
+
+  --my-skillSet01-Rectangle-SkillSetNumber-Right: 4rem;
+  --my-skillSet01-Rectangle-SkillSetNumber-Font-Size: 3rem;
 }
 
 .HeroSection {
@@ -447,30 +474,89 @@ body {
   font-size: var(--my-skillSets-font-size);
 }
 
-/*.skillSet_01 {*/
-/*  position: relative;*/
-/*}*/
 .skillSet01DetailedRectangle {
   position: absolute;
-  width: 32rem;
-  height: 35rem;
-  background-color: #00ffd5;
+  width: var(--my-skillSet01-Rectangle-width);
+  height: var(--my-skillSet01-Rectangle-height);
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 10%;
 }
 
-.skillSet01DetailedRectangle .skillSet01DetailedRectangleTitle {
+.skillSet01DetailedRectangle .skillSetDetail1 {
+  font-size: var(--my-skillSet01-Rectangle-SkillSetDetail01-Font-Size);
+}
+
+.skillSet01DetailedRectangle .skillSetNumber1 {
   position: absolute;
-  top: 0.5rem;
-  left: 2rem;
+  top: 0;
+  right: var(--my-skillSet01-Rectangle-SkillSetNumber-Right);
+  font-size: var(--my-skillSet01-Rectangle-SkillSetNumber-Font-Size);
+  font-weight: bold;
+}
+
+.skillSet01DetailedRectangle .skillSet01DetailedRectangleTitle {
+  position: relative;  /*Did relative for title right now, Look here if got any issue later*/
+  top: var(--my-skillSet01-Rectangle-Title-top);
+  left: var(--my-skillSet01-Rectangle-Title-left);
+  color: white;
 }
 
 .skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 {
   position: absolute;
-  top: 10rem;
-  left: 2rem;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-left);
 }
 
+.skillSet01DetailedRectangle .skillSetTitle1 {
+  font-weight: bold;
+}
 
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages {
+  position: relative;
+  color: white;
+}
+
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: black;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+}
+
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: black;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+}
+
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(3) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: black;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div3-top);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+}
+
+.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(4) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: black;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div4-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div4-left);
+  background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+}
 
 .projectSection {
   position: relative;
