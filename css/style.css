@@ -79,12 +79,12 @@ body {
   --my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2: 7rem;
 
   --my-skillSet01-Rectangle-ToolsAndLanguages-div2-top: 1.4rem;
-  --my-skillSet01-Rectangle-ToolsAndLanguages-div2-left: 7rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div2-left: 6rem;
 
   --my-skillSet01-Rectangle-ToolsAndLanguages-div3-top: 3.5rem;
 
   --my-skillSet01-Rectangle-ToolsAndLanguages-div4-top: 3.55rem;
-  --my-skillSet01-Rectangle-ToolsAndLanguages-div4-left: 9rem;
+  --my-skillSet01-Rectangle-ToolsAndLanguages-div4-left: 8rem;
 
   --my-skillSet01-Rectangle-SkillSetDetail01-Font-Size: 0.8rem;
 
@@ -93,6 +93,11 @@ body {
 
   --my-skillSet01-Rectangle-parentDivs-color: white;
   --my-skillSet01-Rectangle-childDivs-color: black;
+
+  --my-skillSet01-Rectangle-childDivs-font-size: 1rem;
+  --my-skillSet01-Rectangle-childDivs-marginTop: 0.5rem;
+  --my-skillSet01-Rectangle-childDivs-padding: 0.2rem;
+  --my-skillSet01-Rectangle-childDivs-height: 1.5rem;
 }
 
 .HeroSection {
@@ -484,11 +489,17 @@ body {
   background: #0f0c29;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 10%;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
 }
 
 .skillSet01DetailedRectangle .skillSetDetail1 {
   font-size: var(--my-skillSet01-Rectangle-SkillSetDetail01-Font-Size);
+}
+
+.skillSet_01 {
+  position: relative;
+  cursor: pointer;
 }
 
 .skillSet01DetailedRectangle .skillSetNumber1 {
@@ -522,16 +533,18 @@ body {
   top: -2rem;
 }
 
-.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(1) {
+
+.skillSet1Languages div:nth-child(1) {
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
   width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
   text-align: center;
   background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
-  font-size: 1rem;
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
-.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(2) {
+.skillSet1Languages div:nth-child(2) {
   position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
@@ -540,9 +553,11 @@ body {
   top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
   left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
-.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(3) {
+.skillSet1Languages div:nth-child(3) {
   position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
@@ -550,9 +565,11 @@ body {
   text-align: center;
   top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div3-top);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
-.skillSet01DetailedRectangle .skillSetsToolsAndLanguages01 .skillSet1Languages div:nth-child(4) {
+.skillSet1Languages div:nth-child(4) {
   position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
@@ -561,10 +578,13 @@ body {
   top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div4-top);
   left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div4-left);
   background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1Framework {
   color: var(--my-skillSet01-Rectangle-parentDivs-color);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1Framework div:nth-child(1) {
@@ -573,58 +593,155 @@ body {
   width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
   text-align: center;
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1DeveloperTools {
   color: var(--my-skillSet01-Rectangle-parentDivs-color);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1DeveloperTools div:nth-child(1) {
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
-  width: 12rem;
-  height: 2rem;
+  width: 8rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
-  padding-top: 0.2rem;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1DeveloperTools div:nth-child(2) {
   position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
-  top: 7.5rem;
-  left: 14rem;
-  width: 5rem;
-  height: 2rem;
+  top: 8.8rem;
+  left: 9rem;
+  width: 4rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
-  padding-top: 0.2rem;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .skillSet1DeveloperTools div:nth-child(3) {
+  position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
-  margin-top: 0.6rem;
-  width: 5rem;
-  height: 2rem;
+  top: 8.8rem;
+  left: 15rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+  width: 4.5rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
-  padding-top: 0.2rem;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
 }
 
 .skillSet1DeveloperTools div:nth-child(4) {
   position: absolute;
   border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
   color: var(--my-skillSet01-Rectangle-childDivs-color);
-  top: 10rem;
-  left: 7rem;
-  /*margin-top: 0.6rem;*/
-  width: 12rem;
-  height: 2rem;
+  top: 11rem;
+  left: 0;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+  width: 9rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
-  padding-top: 0.2rem;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
   background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+}
+
+.skillSet1DeveloperTools div:nth-child(5) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 11rem;
+  left: 11rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+  width: 4rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+}
+
+.skillSet1Concepts {
+  color: var(--my-skillSet01-Rectangle-parentDivs-color);
+  position: absolute;
+  top: 13rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet1Concepts div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: 6rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet1Concepts div:nth-child(2) {
+  position: absolute;
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 1.5rem;
+  left: 7rem;
+  width: 9rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+/* =====================================================
+     SKILL SET 01 - HOVER EFFECT
+======================================================== */
+
+/* Default state — rectangle hidden */
+.skillSet01DetailedRectangle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s cubic-bezier(0.5, 1, 0.8, 1),
+  transform 1.5s cubic-bezier(0.5, 1, 0.8, 1);
+  pointer-events: none;
+}
+
+/* Hover on skillSet_01 — rectangle appears */
+.skillSet_01:hover .skillSet01DetailedRectangle {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Front content (icon, title, detail, number) fades out on hover */
+.skillSet_01 > .skillSetIcon,
+.skillSet_01 > .skillSetTitle,
+.skillSet_01 > .skillSetDetail,
+.skillSet_01 > .skillSetNumber {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.skillSet_01:hover > .skillSetIcon,
+.skillSet_01:hover > .skillSetTitle,
+.skillSet_01:hover > .skillSetDetail,
+.skillSet_01:hover > .skillSetNumber {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 .projectSection {
