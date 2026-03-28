@@ -538,12 +538,7 @@ body {
   border-radius: 50%;
   background: no-repeat center center;
   background-size: cover;
-  box-shadow:
-    rgb(85, 91, 255)  0 0 0 3px,
-    rgb(31, 193, 27)  0 0 0 6px,
-    rgb(255, 217, 19) 0 0 0 9px,
-    rgb(255, 156, 85) 0 0 0 12px,
-    rgb(255, 85, 85)  0 0 0 15px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0 inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   animation: slideInLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards,
   floatUpDown 4s ease-in-out 1s infinite;
 }
@@ -655,7 +650,110 @@ body {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-12px); }
 }
+/* ===========================
+   ABOUT — TABLET (481px – 768px)
+=========================== */
+@media (max-width: 768px) {
 
+  .aboutSection {
+    padding: 6rem 2.5rem 3rem;
+    min-height: auto;
+  }
+
+  .aboutSectionWrapper {
+    gap: 3rem;
+  }
+
+  .aboutSection .profileImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutRightPanel {
+    gap: 1.2rem;
+  }
+
+  .aboutSection .profileDetails {
+    font-size: 0.95rem;
+  }
+
+  .aboutSection .littleBitOfWorkExp {
+    gap: 1rem;
+  }
+
+  .aboutSection .littleBitOfWorkExp .skillsBox,
+  .aboutSection .littleBitOfWorkExp .workExpBox,
+  .aboutSection .littleBitOfWorkExp .projectsBox {
+    min-width: 6rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .aboutSection .littleBitOfWorkExp h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===========================
+   ABOUT — MOBILE (≤ 480px)
+=========================== */
+@media (max-width: 480px) {
+
+  .aboutSection {
+    padding: 6rem 1.2rem 3rem;
+    min-height: auto;
+  }
+
+  .aboutSectionWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .aboutLeftPanel {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .aboutSection .profileImage {
+    width: 160px;
+    height: 160px;
+  }
+
+  .aboutRightPanel {
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  .aboutSection .profileDetails {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .aboutSection .littleBitOfWorkExp {
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .aboutSection .littleBitOfWorkExp .skillsBox,
+  .aboutSection .littleBitOfWorkExp .workExpBox,
+  .aboutSection .littleBitOfWorkExp .projectsBox {
+    min-width: 5.5rem;
+    flex: 1;
+    padding: 0.9rem 0.6rem;
+  }
+
+  .aboutSection .littleBitOfWorkExp h4 {
+    font-size: 1.1rem;
+  }
+
+  .aboutSection .littleBitOfWorkExp h4:last-child {
+    font-size: 0.72rem;
+  }
+}
 
 
 
@@ -1068,7 +1166,7 @@ body {
   color: var(--my-skillSet01-Rectangle-childDivs-color);
   width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
   text-align: center;
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1125,7 +1223,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1140,7 +1238,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1159,7 +1257,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1174,7 +1272,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1189,7 +1287,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1237,7 +1335,7 @@ body {
   color: var(--my-skillSet01-Rectangle-childDivs-color);
   width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
   text-align: center;
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1250,7 +1348,7 @@ body {
   text-align: center;
   top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
   left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1262,7 +1360,7 @@ body {
   text-align: center;
   top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
   left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: 1rem;
 }
@@ -1278,7 +1376,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1293,7 +1391,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1308,7 +1406,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1322,7 +1420,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1341,7 +1439,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1356,7 +1454,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1370,7 +1468,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #0BFA37 0%, #06C50C 55%, #00A919 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
@@ -1391,7 +1489,7 @@ body {
   height: var(--my-skillSet01-Rectangle-childDivs-height);
   text-align: center;
   padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
-  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  background: linear-gradient(90deg, #FFD900 0%, #D0C900 55%, #FFFF00 100%);
   font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
   margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
