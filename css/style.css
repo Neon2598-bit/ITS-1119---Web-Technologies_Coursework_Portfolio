@@ -758,34 +758,92 @@ body {
 
 
 
+/* ===========================
+     SKILLS SECTION
+=========================== */
 .skillsSection {
-  position: relative;
   width: 100%;
-  height: 100vh;
-}
-
-.skillsSection .skillsTitle .skillsTitleHeading1{
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: white;
-}
-
-.skillsSection .skillsTitle .skillsTitleHeading2{
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-}
-
-.skillsSection .skillsSectionGroup {
-  position: absolute;
-  top: var(--my-skillSetGroup-top);
-  left: var(--my-skillSetGroup-left);
+  min-height: 100vh;
   display: flex;
-  gap: var(--my-skillSetGroup-gap);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 4rem 4rem;
+  gap: 3rem;
+}
+
+/* ===========================
+     SKILLS TITLE
+=========================== */
+.skillsSection .skillsTitle {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skillsTitle .skillsTitleHeading1 {
+  display: flex;
+  gap: 0.5rem;
   color: white;
 }
+
+.skillsTitle .skillsTitleHeading1 h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.skillsTitle .skillsTitleHeading1 h1:first-child {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skillsTitle .skillsTitleHeading1 h1:last-child {
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7, #ff6fd8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.skillsTitle .skillsTitleHeading2 {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+}
+.skillsTitle .skillsTitleHeading2 h2:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FFD43B, #FF6B6B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skillsTitle .skillsTitleHeading2 h2:last-child {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===========================
+     SKILLS CARDS GROUP
+=========================== */
+.skillsSection .skillsSectionGroup {
+  position: static;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  color: white;
+}
+/* ===========================
+     EACH SKILL CARD (BASE)
+=========================== */
+
+
 
 /* =====================================================
      SKILL SET 01 - INNER STYLES
