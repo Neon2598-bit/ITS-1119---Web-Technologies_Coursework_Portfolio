@@ -504,106 +504,116 @@ body {
 
 
 
-
+/* ===========================
+     ABOUT SECTION
+=========================== */
 .aboutSection {
-  position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 4rem 4rem;
+}
+.aboutSectionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+  max-width: 1300px;
 }
 
+/* ===========================
+     LEFT PANEL - IMAGE
+=========================== */
+.aboutLeftPanel {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .aboutSection .profileImage {
-  position: absolute;
-  width: 20vw;
-  height: 30vh;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: url("/img/SEJOb.jpg") no-repeat;
+  background: no-repeat center center;
   background-size: cover;
-  top: var(--my-profile-image-top);
-  left: var(--my-profile-image-left);
-  box-shadow: rgb(85, 91, 255) 0 0 0 3px, rgb(31, 193, 27) 0 0 0 6px, rgb(255, 217, 19) 0 0 0 9px, rgb(255, 156, 85) 0 0 0 12px, rgb(255, 85, 85) 0 0 0 15px;
-}
-
-.aboutSection .profileDetails {
-  position: absolute;
-  width: 60vw;
-  height: 45vh;
-  text-indent: 15rem;
-  text-align: justify;
-  top: var(--my-paragraph-top);
-  left: var(--my-paragraph-left);
-  font-size: 2rem;
-  color: white;
-  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
-}
-
-.aboutSection .littleBitOfWorkExp {
-  position: absolute;
-  display: inline-flex;
-  top: var(--my-exp-group-top);
-  left: var(--my-exp-group-left);
-  gap: 5rem;
-  font-size: 3rem;
-}
-
-.aboutSection .littleBitOfWorkExp .skillsBox {
-  width: 15rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.aboutSection .littleBitOfWorkExp .workExpBox {
-  width: 28rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.aboutSection .littleBitOfWorkExp .projectsBox {
-  width: 15rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.aboutSection .littleBitOfWorkExp h4 {
-  padding-left: 1rem;
-}
-
-.aboutSection .profileImage {
+  box-shadow:
+    rgb(85, 91, 255)  0 0 0 3px,
+    rgb(31, 193, 27)  0 0 0 6px,
+    rgb(255, 217, 19) 0 0 0 9px,
+    rgb(255, 156, 85) 0 0 0 12px,
+    rgb(255, 85, 85)  0 0 0 15px;
   animation: slideInLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards,
   floatUpDown 4s ease-in-out 1s infinite;
 }
-/* =====================================================
-        Profile Image - slide in from left + float
-======================================================== */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ===========================
+     RIGHT PANEL - CONTENT
+=========================== */
+.aboutRightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  flex: 1;
+}
+.aboutSectionLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.35);
+}
+.aboutSection .profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+  text-indent: 0;
 }
 
-@keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
+.aboutSection .profileDetails p {
+  margin: 0;
+}
+
+/* ===========================
+     EXP BOXES
+=========================== */
+.aboutSection .littleBitOfWorkExp {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.aboutSection .littleBitOfWorkExp .skillsBox,
+.aboutSection .littleBitOfWorkExp .workExpBox,
+.aboutSection .littleBitOfWorkExp .projectsBox {
+  position: relative;
+  flex: 1;
+  min-width: 8rem;
+  padding: 1.2rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+.aboutSection .littleBitOfWorkExp h4 {
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.aboutSection .littleBitOfWorkExp h4:last-child {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1px;
 }
 
 /* =====================================================
-        ABOUT SECTION DIV GROUP GLOWING ANIMATION
+     GLOWING BORDER — exp boxes
 ======================================================== */
 .aboutSection .littleBitOfWorkExp div::before {
   content: "";
@@ -631,6 +641,19 @@ body {
   background: rgba(10, 5, 25, 0.75);
   border-radius: 16px;
   z-index: -1;
+}
+
+/* =====================================================
+     ANIMATIONS
+======================================================== */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
 }
 
 
