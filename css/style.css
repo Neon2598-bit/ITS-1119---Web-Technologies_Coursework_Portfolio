@@ -10,11 +10,16 @@ html {
 
 body {
   overflow-x: hidden;
-  /*Background Color For Left To Rigt Bottom*/
-  background: #03001e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*!*Background Color For Left To Rigt Bottom*!*/
+  /*background: #03001e;  !* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e);  !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(135deg, #fdeff9, #ec38bc, #7303c0, #03001e); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
 
+  /*background-size: 400% 400%;*/
+  background: linear-gradient(
+    135deg,
+    #0a0a0f, #0d1b2a, #0a0a0f, #0d1b2a
+  );
   background-size: 400% 400%;
   animation: diagonalShift 6s ease infinite;
 }
@@ -225,6 +230,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  color: white;
 }
 
 .HeroSectionHeading3 {
@@ -233,6 +239,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  color: white;
 }
 
 .HeroSectionSocialLinksGroup {
@@ -351,6 +358,8 @@ body {
   top: var(--my-paragraph-top);
   left: var(--my-paragraph-left);
   font-size: 2rem;
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
 }
 
 .aboutSection .littleBitOfWorkExp {
@@ -460,12 +469,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  color: white;
 }
 
 .skillsSection .skillsTitle .skillsTitleHeading2{
   position: absolute;
   top: 0;
   right: 0;
+  color: white;
 }
 
 .skillsSection .skillsSectionGroup {
@@ -474,7 +485,12 @@ body {
   left: var(--my-skillSetGroup-left);
   display: flex;
   gap: var(--my-skillSetGroup-gap);
+  color: white;
 }
+
+/* =====================================================
+     SKILL SET 01 - INNER STYLES
+======================================================== */
 
 .skillsSection .skillsSectionGroup .skillSet_01,
 .skillSet_02,
@@ -742,6 +758,441 @@ body {
 .skillSet_01:hover > .skillSetNumber {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+/* =====================================================
+     SKILL SET 02 & 03 - BASE POSITIONS
+======================================================== */
+.skillSet_02 {
+  position: relative;
+  cursor: pointer;
+}
+
+.skillSet_03 {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Rectangles — same size/style as 01 */
+.skillSet02DetailedRectangle,
+.skillSet03DetailedRectangle {
+  position: absolute;
+  width: var(--my-skillSet01-Rectangle-width);
+  height: var(--my-skillSet01-Rectangle-height);
+  background: #0f0c29;
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+  transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+/* Hover reveal */
+.skillSet_02:hover .skillSet02DetailedRectangle,
+.skillSet_03:hover .skillSet03DetailedRectangle {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Front labels fade out */
+.skillSet_02 > .skillSetIcon,
+.skillSet_02 > .skillSetTitle,
+.skillSet_02 > .skillSetDetail,
+.skillSet_02 > .skillSetNumber,
+.skillSet_03 > .skillSetIcon,
+.skillSet_03 > .skillSetTitle,
+.skillSet_03 > .skillSetDetail,
+.skillSet_03 > .skillSetNumber {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skillSet_02:hover > .skillSetIcon,
+.skillSet_02:hover > .skillSetTitle,
+.skillSet_02:hover > .skillSetDetail,
+.skillSet_02:hover > .skillSetNumber,
+.skillSet_03:hover > .skillSetIcon,
+.skillSet_03:hover > .skillSetTitle,
+.skillSet_03:hover > .skillSetDetail,
+.skillSet_03:hover > .skillSetNumber {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* =====================================================
+     SKILL SET 02 - INNER STYLES
+======================================================== */
+.skillSet02DetailedRectangle .skillSetDetail2 {
+  font-size: var(--my-skillSet01-Rectangle-SkillSetDetail01-Font-Size);
+}
+
+.skillSet02DetailedRectangle .skillSetNumber2 {
+  position: absolute;
+  top: 0;
+  right: var(--my-skillSet01-Rectangle-SkillSetNumber-Right);
+  font-size: var(--my-skillSet01-Rectangle-SkillSetNumber-Font-Size);
+  font-weight: bold;
+}
+
+.skillSet02DetailedRectangle .skillSet02DetailedRectangleTitle {
+  position: relative;
+  top: var(--my-skillSet01-Rectangle-Title-top);
+  left: var(--my-skillSet01-Rectangle-Title-left);
+  color: white;
+}
+
+.skillSet02DetailedRectangle .skillSetsToolsAndLanguages02 {
+  position: absolute;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-left);
+}
+
+.skillSet02DetailedRectangle .skillSetTitle2 {
+  font-weight: bold;
+}
+
+.skillSet2WebFrontEnd {
+  color: white;
+  position: relative;
+  top: -2rem;
+}
+
+.skillSet2WebFrontEnd div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2WebFrontEnd div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2WebFrontEnd div:nth-child(3) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div3-top);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2DesignTools {
+  color: white;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2DesignTools div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: 6rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2DesignTools div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 5.2rem;
+  left: 7rem;
+  width: 10rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2DesignTools div:nth-child(3) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 8rem;
+  left: 0;
+  width: 8rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #6B6767 6%, #6B6767 54%, #D1CACA 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2FocusAreas {
+  color: white;
+  position: absolute;
+  top: 10rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2FocusAreas div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: 7rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2FocusAreas div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 1.5rem;
+  left: 8rem;
+  width: 7rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet2FocusAreas div:nth-child(3) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 3.5rem;
+  left: 0;
+  width: 8rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+/* =====================================================
+     SKILL SET 03 - INNER STYLES
+======================================================== */
+.skillSet03DetailedRectangle .skillSetDetail3 {
+  font-size: var(--my-skillSet01-Rectangle-SkillSetDetail01-Font-Size);
+}
+
+.skillSet03DetailedRectangle .skillSetNumber3 {
+  position: absolute;
+  top: 0;
+  right: var(--my-skillSet01-Rectangle-SkillSetNumber-Right);
+  font-size: var(--my-skillSet01-Rectangle-SkillSetNumber-Font-Size);
+  font-weight: bold;
+}
+
+.skillSet03DetailedRectangle .skillSet03DetailedRectangleTitle {
+  position: relative;
+  top: var(--my-skillSet01-Rectangle-Title-top);
+  left: var(--my-skillSet01-Rectangle-Title-left);
+  color: white;
+}
+
+.skillSet03DetailedRectangle .skillSetsToolsAndLanguages03 {
+  position: absolute;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-left);
+}
+
+.skillSet03DetailedRectangle .skillSetTitle3 {
+  font-weight: bold;
+}
+
+.skillSet3Databases {
+  color: white;
+  position: relative;
+  top: -2rem;
+}
+
+.skillSet3Databases div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Databases div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width1);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Databases div:nth-child(3) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  text-align: center;
+  top: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-top);
+  left: var(--my-skillSet01-Rectangle-ToolsAndLanguages-div2-left);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: 1rem;
+}
+
+.skillSet3Tools {
+  color: white;
+}
+
+.skillSet3Tools div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: 6rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Tools div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 6.7rem;
+  left: 7rem;
+  width: 6rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Tools div:nth-child(3) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 6.6rem;
+  left: 14rem;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Tools div:nth-child(4) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 6.6rem;
+  left: 14rem;
+  width: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-width2);
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Concepts {
+  color: white;
+  position: absolute;
+  top: 12rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Concepts div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  width: 5rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #ED3990 4%, #ED39EA 50%, #872085 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Concepts div:nth-child(2) {
+  position: absolute;
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 1.5rem;
+  left: 6rem;
+  width: 12rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Concepts div:nth-child(3) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 1.5rem;
+  left: 6rem;
+  width: 11rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Learning {
+  color: white;
+  position: absolute;
+  top: 19rem;
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
+}
+
+.skillSet3Learning div:nth-child(1) {
+  border-radius: var(--my-skillSet01-Rectangle-ToolsAndLanguages-divs-border-radius);
+  color: var(--my-skillSet01-Rectangle-childDivs-color);
+  top: 1.5rem;
+  left: 6rem;
+  width: 9rem;
+  height: var(--my-skillSet01-Rectangle-childDivs-height);
+  text-align: center;
+  padding-top: var(--my-skillSet01-Rectangle-childDivs-padding);
+  background: linear-gradient(90deg, #36C0F3 6%, #36E0F3 59%, #1F828D 100%);
+  font-size: var(--my-skillSet01-Rectangle-childDivs-font-size);
+  margin-top: var(--my-skillSet01-Rectangle-childDivs-marginTop);
 }
 
 .projectSection {
