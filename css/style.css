@@ -1227,6 +1227,78 @@ body {
   margin-top: 0.3rem;
 }
 
+/* ===========================
+   SKILLS — TABLET (≤ 768px)
+=========================== */
+@media (max-width: 768px) {
+
+  .skillsSection {
+    padding: 3rem 2.5rem 3rem;
+    gap: 3rem;
+  }
+
+  /* Title row stacks vertically */
+  .skillsSection .skillsTitle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .skillsSection .skillsTitle .skillsTitleHeading2 {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Cards stack vertically */
+  .skillsSection .skillsSectionGroup {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .skillSet_01,
+  .skillSet_02,
+  .skillSet_03 {
+    min-height: 420px;
+    width: 100%;
+  }
+
+  /* Legend wraps */
+  .skillLevelLegend {
+    gap: 1rem;
+    padding: 0.65rem 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+/* ===========================
+   SKILLS — MOBILE (≤ 480px)
+=========================== */
+@media (max-width: 480px) {
+
+  .skillsSection {
+    padding: 3rem 1.2rem 3rem;
+    gap: 2.5rem;
+  }
+
+  .skillSet_01,
+  .skillSet_02,
+  .skillSet_03 {
+    min-height: 380px;
+  }
+
+  /* Legend goes to 2x2 grid */
+  .skillLevelLegend {
+    gap: 0.7rem 1.2rem;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .skillLevelLegend .legendItem {
+    font-size: 0.75rem;
+  }
+
+}
 
 
 
