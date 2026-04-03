@@ -686,114 +686,134 @@
 
 </section>
 
-<div class="gallery-title-row">
-  <div class="gallery-title-left">
-    <h1>MY<br>GALLERY</h1>
-    <div class="gallery-gradient-bar"></div>
-  </div>
-  <div class="gallery-title-right">
-    <h2>Blog & Snapshots</h2>
-    <p>A visual diary of moments, projects, and experiences</p>
-  </div>
-</div>
+<section class = "galleyBlogSection" id = "galleryBlog">
 
-<div class="carousel-scene">
-  <button class="carousel-btn btn-prev" id="galleryPrev">&#8592;</button>
-  <div class="carousel-track" id="carouselTrack"></div>
-  <button class="carousel-btn btn-next" id="galleryNext">&#8594;</button>
-</div>
+  <div class = "galleryBlog">
 
-<div class="carousel-bottom-controls">
-  <div class="carousel-dots" id="galleryDots"></div>
-  <div class="carousel-counter" id="galleryCounter">1 / 6</div>
-</div>
-
-<section class = "contactMeSection">
-
-  <div class = "contactMeTitle">
-    <h1>Get In Touch</h1>
-    <h4>Have a project in mind or just want to chat? Feel free to reach out</h4>
-  </div>
-
-  <div class = "contactMeDetailedRectangle">
-
-    <h3>Contact Information</h3>
-
-    <div class = "emailGroup">
-
-      <div class = "emailImageIcon"></div>
-      <div class = "emailInfo">E - Mail</div>
-      <div class = "contactEmailAddress">maduhsh.29@gmail.com</div>
-
-    </div>
-
-    <div class = "callGroup">
-
-      <div class = "callImageIcon"></div>
-      <div class = "callInfo">Call - Me</div>
-      <div class = "contactNumber">+981234567890</div>
-
-    </div>
-
-    <div class = "locationGroup">
-
-      <div class = "locationImageIcon"></div>
-      <div class = "locationInfo">Location</div>
-      <div class = "locationDetails">US,New York</div>
-
+    <div class="slider">
+      <div class="item" style = "--position: 1"><img src="img/Image_01.jpeg" alt="MyPictures01"></div>
+      <div class="item" style = "--position: 2"><img src="img/Image_02.jpeg" alt="MyPictures02"></div>
+      <div class="item" style = "--position: 3"><img src="img/Image_03.jpeg" alt="MyPictures03"></div>
+      <div class="item" style = "--position: 4"><img src="img/Image_04.jpeg" alt="MyPictures04"></div>
+      <div class="item" style = "--position: 5"><img src="img/Image_05.jpeg" alt="MyPictures05"></div>
+      <div class="item" style = "--position: 6"><img src="img/Image_06.jpeg" alt="MyPictures06"></div>
+      <div class="item" style = "--position: 7"><img src="img/Image_07.jpeg" alt="MyPictures07"></div>
+      <div class="item" style = "--position: 8"><img src="img/Image_08.jpeg" alt="MyPictures08"></div>
     </div>
 
   </div>
 
-  <div class="quickLinksShortcut">
+</section>
 
-    <div>Home</div>
-    <div>About</div>
-    <div>Skills</div>
-    <div>Projects</div>
-    <div>Contacts</div>
+<section class="contactMeSection" id="contact">
+
+  <div class="contact-title-row">
+    <div class="contact-title-left">
+      <h1>GET IN<br>TOUCH</h1>
+    </div>
+    <div class="contact-title-right">
+      <h2>Contact Me</h2>
+      <p>Have a project in mind or just want to chat?<br>Feel free to reach out — I'd love to connect.</p>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- LEFT — Info Card -->
+    <div class="contact-info-card">
+      <p class="contact-info-label">CONTACT INFO</p>
+
+      <div class="contact-item" onclick="copyText('maduhsh.29@gmail.com', this)">
+        <div class="contact-icon-box icon-email"><i class="fa-regular fa-envelope"></i></div>
+        <div class="contact-item-text">
+          <p>E-MAIL</p>
+          <p>maduhsh.29@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="contact-item" onclick="copyText('+94 123 456 789', this)">
+        <div class="contact-icon-box icon-phone"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-item-text">
+          <p>PHONE</p>
+          <p>+94 123 456 789</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon-box icon-loc"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-item-text">
+          <p>LOCATION</p>
+          <p>Panadura, Sri Lanka</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="contact-info-label" style="margin-bottom: 0.8rem;">FIND ME ON</p>
+        <div class="social-row">
+          <a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener" class="social-btn">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="YOUR_LINKEDIN_LINK" target="_blank" rel="noopener" class="social-btn">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:maduhsh.29@gmail.com" class="social-btn">
+            <i class="fa-regular fa-envelope"></i> Gmail
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — Form Card -->
+    <div class="contact-form-card">
+      <p class="form-title">Send a Message</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>NAME</label>
+          <input type="text" id="userName" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label>E-MAIL</label>
+          <input type="text" id="userEmail" placeholder="your@email.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label>SUBJECT</label>
+          <input type="text" id="userSubject" placeholder="What's this about?" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label>MESSAGE</label>
+          <textarea id="userMessage" rows="5" placeholder="Write your message here..."></textarea>
+        </div>
+      </div>
+
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send Message ✉</button>
+
+      <div class="toast" id="toast">
+        ✅ Message sent! I'll get back to you soon.
+      </div>
+    </div>
 
   </div>
 
-  <div class = "msgMeDetailsBoxesRectangle">
-
-    <div class = "nameTextBoxField">
-
-      <div>Name : </div>
-      <label>
-        <input type = "text" name = "name" />
-      </label>
-
-    </div>
-
-    <div class = "emailTextBoxField">
-
-      <div>E-Mail : </div>
-      <label>
-        <input type = "text" name = "name" />
-      </label>
-
-    </div>
-
-    <div class = "messageTextBoxField">
-
-      <div>Message : </div>
-      <label>
-        <input type = "text" name = "name" />
-      </label>
-
-    </div>
-
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <div class="footer-logo">𝕋𝔼𝕄</div>
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skill">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#academic_tasks">Academic</a></li>
+      <li><a href="#galleryBlog">Gallery</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Thushal Eranda Madushan. All rights reserved.</p>
   </div>
-
-  <div class = "socialLinksGroup">
-
-    <div>GitHub</div>
-    <div>LinkedIn</div>
-    <div>GMail</div>
-
-  </div>
-
 
 </section>
 
