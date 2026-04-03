@@ -16,51 +16,24 @@ navUl.querySelectorAll('a').forEach(link => {
 (function () {
 
   const FULL_NAME = 'Thushal Eranda Madushan';
-
-  const navBox     = document.querySelector('.HeroSectionBoxNav');
-  const plainEl    = document.getElementById('heroPlain');
-  const nameEl     = document.getElementById('heroName');
-  const heading2   = document.querySelector('.HeroSectionHeading2');
-  const heading3   = document.querySelector('.HeroSectionHeading3');
-  const socialIcons = document.querySelectorAll('.HeroSectionSocialLinksGroup a');
-  const cta        = document.querySelector('.HeroSectionMidContentButton');
-
-  navBox.style.cssText    = 'opacity:0; top:-6rem;';
-  plainEl.style.cssText   = 'opacity:0; transform:translateY(24px);';
-  nameEl.style.cssText    = 'opacity:0;';
-  heading2.style.cssText  = 'opacity:0; transform:translateY(24px);';
-  heading3.style.cssText  = 'opacity:0; transform:translateY(24px);';
-  cta.style.cssText       = 'opacity:0; transform:scale(0.8);';
-
-  socialIcons.forEach(icon => {
-    icon.style.cssText = 'opacity:0; transform:scale(0.3) translateY(12px);';
-  });
-
-  function reveal(el, delay, extraCSS = '') {
-    setTimeout(() => {
-      el.style.cssText = `transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); opacity:1; transform:translateY(0) scale(1); ${extraCSS}`;
-    }, delay);
-  }
+  const nameEl = document.getElementById('heroName');
 
   const cursorStyle = document.createElement('style');
   cursorStyle.textContent = `@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }`;
   document.head.appendChild(cursorStyle);
 
-  function typewrite(el, text, onDone) {
+  function typewrite(el, text) {
     el.style.opacity = '1';
     let i = 0;
-
     const cursor = document.createElement('span');
     cursor.textContent = '|';
     cursor.style.cssText = 'display:inline-block; margin-left:1px; -webkit-text-fill-color:rgba(255,255,255,0.75); animation:cursorBlink 0.55s step-end infinite;';
     el.appendChild(cursor);
-
     function tick() {
       if (i < text.length) {
         cursor.insertAdjacentText('beforebegin', text[i++]);
         setTimeout(tick, 60);
       } else {
-        if (onDone) onDone();
         setTimeout(() => {
           cursor.style.transition = 'opacity 0.4s ease';
           cursor.style.opacity = '0';
@@ -72,156 +45,111 @@ navUl.querySelectorAll('a').forEach(link => {
   }
 
   window.addEventListener('load', () => {
-
-    setTimeout(() => {
-      navBox.style.cssText = `
-        position: fixed;
-        top: 1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), top 0.7s cubic-bezier(0.22,1,0.36,1);
-        opacity: 1;
-      `;
-    }, 150);
-
-    setTimeout(() => reveal(plainEl, 0), 500);
-
-    setTimeout(() => typewrite(nameEl, FULL_NAME), 800);
-
-    reveal(heading2, 2050);
-
-    reveal(heading3, 2250);
-
-    socialIcons.forEach((icon, i) => {
-      setTimeout(() => {
-        icon.style.cssText = `
-          transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        `;
-      }, 2450 + i * 140);
-    });
-
-    setTimeout(() => {
-      cta.style.cssText = `
-        transition: opacity 0.55s cubic-bezier(0.34,1.56,0.64,1), transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
-        opacity: 1;
-        transform: scale(1);
-      `;
-    }, 2850);
+    setTimeout(() => typewrite(nameEl, FULL_NAME), 400);
   });
+
 })();
 
-(function () {
+// ===========================
+//   P5.JS BACKGROUND SKETCH
+// ===========================
 
-  const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  const hero = document.querySelector('.HeroSection');
-  const midWrapper = document.querySelector('.HeroSectionMidWrapper');
+new p5(function (p) {
 
-  const COLORS = [
-    'rgba(177,151,252,',
-    'rgba(0,212,255,',
-    'rgba(255,111,216,'
-  ];
+  const CELL_SIZE = 40;
+  const COLOR_RED = 118;
+  const COLOR_GREEN = 53;
+  const COLOR_BLUE = 243;
+  const STARTING_ALPHA = 255;
+  const BACKGROUND_COLOR = 13;
+  const PROB_OF_NEIGHBOR = 0.5;
+  const AMT_FADE_PER_FRAME = 5;
+  const STROKE_WEIGHT = 1;
 
-  let W, H, particles;
-  let mouseX = 0, mouseY = 0;
-  let parallaxX = 0, parallaxY = 0;
-  let currentPX = 0, currentPY = 0;
+  let colorWithAlpha;
+  let numRows;
+  let numCols;
+  let currentRow = -1;
+  let currentCol = -1;
+  let allNeighbors = [];
 
-  function resize() {
-    W = canvas.width  = hero.offsetWidth;
-    H = canvas.height = hero.offsetHeight;
-  }
+  p.setup = function () {
+    let cnv = p.createCanvas(p.windowWidth, p.windowHeight);
+    cnv.style('position', 'fixed');
+    cnv.style('inset', '0');
+    cnv.style('z-index', '-1');
+    cnv.style('pointer-events', 'none');
+    colorWithAlpha = p.color(COLOR_RED, COLOR_GREEN, COLOR_BLUE, STARTING_ALPHA);
+    p.noFill();
+    p.stroke(colorWithAlpha);
+    p.strokeWeight(STROKE_WEIGHT);
+    numRows = Math.ceil(p.windowHeight / CELL_SIZE);
+    numCols = Math.ceil(p.windowWidth / CELL_SIZE);
+  };
 
-  function makeParticles() {
-    particles = [];
-    const count = Math.floor((W * H) / 14000);
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x:     Math.random() * W,
-        y:     Math.random() * H,
-        r:     Math.random() * 1.6 + 0.5,
-        dx:    (Math.random() - 0.5) * 0.4,
-        dy:    (Math.random() - 0.5) * 0.4,
-        alpha: Math.random() * 0.45 + 0.15,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)]
-      });
+  p.draw = function () {
+    // p.background(BACKGROUND_COLOR);
+    p.clear();
+
+    let row = p.floor(p.mouseY / CELL_SIZE);
+    let col = p.floor(p.mouseX / CELL_SIZE);
+
+    if (row !== currentRow || col !== currentCol) {
+      currentRow = row;
+      currentCol = col;
+      allNeighbors.push(...getRandomNeighbors(row, col));
     }
-  }
 
-  resize();
-  makeParticles();
-  window.addEventListener('resize', () => { resize(); makeParticles(); });
+    let x = col * CELL_SIZE;
+    let y = row * CELL_SIZE;
 
-  hero.addEventListener('mousemove', e => {
-    const r = hero.getBoundingClientRect();
-    mouseX = e.clientX - r.left;
-    mouseY = e.clientY - r.top;
-    parallaxX = (mouseX - W / 2) / W * 18;
-    parallaxY = (mouseY - H / 2) / H * 18;
-  });
+    p.stroke(colorWithAlpha);
+    p.rect(x, y, CELL_SIZE, CELL_SIZE);
 
-  hero.addEventListener('mouseleave', () => {
-    parallaxX = 0;
-    parallaxY = 0;
-  });
+    for (let neighbor of allNeighbors) {
+      let nx = neighbor.col * CELL_SIZE;
+      let ny = neighbor.row * CELL_SIZE;
+      neighbor.opacity = Math.max(0, neighbor.opacity - AMT_FADE_PER_FRAME);
+      p.stroke(COLOR_RED, COLOR_GREEN, COLOR_BLUE, neighbor.opacity);
+      p.rect(nx, ny, CELL_SIZE, CELL_SIZE);
+    }
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
+    allNeighbors = allNeighbors.filter(n => n.opacity > 0);
+  };
 
-    // Smooth parallax lerp
-    currentPX += (parallaxX - currentPX) * 0.05;
-    currentPY += (parallaxY - currentPY) * 0.05;
-    midWrapper.style.transform = `translate(${currentPX}px, ${currentPY}px)`;
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-
-      // Drift
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0) p.x = W;
-      if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H;
-      if (p.y > H) p.y = 0;
-
-      const dist = Math.hypot(p.x - mouseX, p.y - mouseY);
-      const proximity = dist < 100 ? (1 - dist / 100) : 0;
-      const alpha = Math.min(1, p.alpha + proximity * 0.55);
-      const radius = p.r + proximity * 2.5;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = p.color + alpha + ')';
-      ctx.fill();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const d = Math.hypot(p.x - q.x, p.y - q.y);
-        if (d < 90) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(177,151,252,${(1 - d / 90) * 0.13})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+  function getRandomNeighbors(row, col) {
+    let neighbors = [];
+    for (let dRow = -1; dRow <= 1; dRow++) {
+      for (let dCol = -1; dCol <= 1; dCol++) {
+        let neighborRow = row + dRow;
+        let neighborCol = col + dCol;
+        let isCurrentCell = dRow === 0 && dCol === 0;
+        let isInbounds =
+          neighborRow >= 0 && neighborRow < numRows &&
+          neighborCol >= 0 && neighborCol < numCols;
+        if (!isCurrentCell && isInbounds && Math.random() < PROB_OF_NEIGHBOR) {
+          neighbors.push({ row: neighborRow, col: neighborCol, opacity: STARTING_ALPHA });
         }
       }
     }
-    requestAnimationFrame(draw);
+    return neighbors;
   }
-  draw();
-})();
+
+  p.windowResized = function () {
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
+    numRows = Math.ceil(p.windowHeight / CELL_SIZE);
+    numCols = Math.ceil(p.windowWidth / CELL_SIZE);
+  };
+
+});
 
 (function () {
 
-  var cards = document.querySelectorAll('.projectCard');
+  let cards = document.querySelectorAll('.projectCard');
 
   if (!cards.length) return;
 
-  var observer = new IntersectionObserver(function (entries) {
+  let observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('card-visible');
@@ -240,34 +168,34 @@ navUl.querySelectorAll('a').forEach(link => {
 (function () {
 
   // Get all the slides
-  var allSlides = document.querySelectorAll('.academicSlide');
-  var dotsContainer = document.getElementById('slideDots');
-  var counterEl = document.getElementById('slideCounter');
-  var prevBtn = document.getElementById('slidePrev');
-  var nextBtn = document.getElementById('slideNext');
-  var tabs = document.querySelectorAll('.academicTab');
+  let allSlides = document.querySelectorAll('.academicSlide');
+  let dotsContainer = document.getElementById('slideDots');
+  let counterEl = document.getElementById('slideCounter');
+  let prevBtn = document.getElementById('slidePrev');
+  let nextBtn = document.getElementById('slideNext');
+  let tabs = document.querySelectorAll('.academicTab');
 
-  var activeAssignment = 1;
-  var currentIndex = 0;
-  var visibleSlides = [];
+  let activeAssignment = 1;
+  let currentIndex = 0;
+  let visibleSlides = [];
 
   function buildDots(count) {
     dotsContainer.innerHTML = '';
-    for (var i = 0; i < count; i++) {
-      var dot = document.createElement('button');
+    for (let i = 0; i < count; i++) {
+      let dot = document.createElement('button');
       dot.className = 'slideDot';
       dot.setAttribute('data-index', i);
       dotsContainer.appendChild(dot);
 
       // When a dot is clicked, go to that slide
       dot.addEventListener('click', function () {
-        var idx = parseInt(this.getAttribute('data-index'));
+        let idx = parseInt(this.getAttribute('data-index'));
         goToSlide(idx);
       });
     }
   }
   function updateDots() {
-    var dots = dotsContainer.querySelectorAll('.slideDot');
+    let dots = dotsContainer.querySelectorAll('.slideDot');
     dots.forEach(function (dot, i) {
       if (i === currentIndex) {
         dot.classList.add('dot-active');
@@ -302,7 +230,7 @@ navUl.querySelectorAll('a').forEach(link => {
   }
 
   prevBtn.addEventListener('click', function () {
-    var newIndex = currentIndex - 1;
+    let newIndex = currentIndex - 1;
     if (newIndex < 0) {
       newIndex = visibleSlides.length - 1;
     }
@@ -310,7 +238,7 @@ navUl.querySelectorAll('a').forEach(link => {
   });
 
   nextBtn.addEventListener('click', function () {
-    var newIndex = currentIndex + 1;
+    let newIndex = currentIndex + 1;
     if (newIndex >= visibleSlides.length) {
       newIndex = 0;
     }
@@ -321,7 +249,7 @@ navUl.querySelectorAll('a').forEach(link => {
     tab.addEventListener('click', function () {
       tabs.forEach(function (t) { t.classList.remove('active'); });
       this.classList.add('active');
-      var assignNum = parseInt(this.getAttribute('data-assignment'));
+      let assignNum = parseInt(this.getAttribute('data-assignment'));
       showAssignment(assignNum);
     });
   });
