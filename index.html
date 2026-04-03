@@ -19,6 +19,7 @@
   <meta name="theme-color" content="#fafafa">
 
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -83,12 +84,12 @@
   <div class="aboutSectionWrapper">
 
     <!-- Left — Profile Image -->
-    <div class="aboutLeftPanel">
-      <div class="profileImage" style="background-image: url('img/SEJOb.jpg');"></div>
+    <div data-aos="fade-right" class="aboutLeftPanel">
+      <div  class="profileImage" style="background-image: url('img/SEJOb.jpg');"></div>
     </div>
 
     <!-- Right — Details -->
-    <div class="aboutRightPanel">
+    <div data-aos="fade-left" class="aboutRightPanel">
 
       <div class="aboutSectionLabel">ABOUT ME</div>
 
@@ -120,17 +121,17 @@
 <section class = "skillsSection" id = "skill">
 
   <div class = "skillsTitle">
-    <div class = "skillsTitleHeading1">
+    <div data-aos="fade-down-right" class = "skillsTitleHeading1">
       <h1>Skill</h1> <h1>Set</h1>
     </div>
 
-    <div class = "skillsTitleHeading2">
+    <div data-aos="fade-down-left" class = "skillsTitleHeading2">
       <h2>30+</h2> <h2>SKILLS ACROSS 3 DOMAINS</h2>
     </div>
 
   </div>
 
-  <div class = "skillsSectionGroup">
+  <div data-aos="zoom-in" class = "skillsSectionGroup">
     <div class = "skillSet_01">
 
       <div class = "skillSetIcon"><i class="fa-solid fa-gear fa-2xl" style="color: rgb(255, 212, 59);"></i></div>
@@ -282,7 +283,7 @@
     </div>
   </div>
 
-  <div class="skillLevelLegend">
+  <div data-aos="fade-up" class="skillLevelLegend">
     <div class="legendItem"><span class="legendDot advanced"></span><span>Advanced</span></div>
     <div class="legendItem"><span class="legendDot intermediate"></span><span>Intermediate</span></div>
     <div class="legendItem"><span class="legendDot basic"></span><span>Basic</span></div>
@@ -295,10 +296,10 @@
 <section class="projectSection" id="projects">
 
   <div class="projectSectionTitle">
-    <div class="projectSectionTitleLeft">
+    <div data-aos="fade-up-right" class="projectSectionTitleLeft">
       <h1>MY<br>WORKS</h1>
     </div>
-    <div class="projectSectionTitleRight">
+    <div data-aos="fade-up-left" class="projectSectionTitleRight">
       <h2>Featured Projects</h2>
       <p>A curated collection of things I've built — from side projects to production-grade apps</p>
     </div>
@@ -307,7 +308,7 @@
 
     <!-- PROJECT 1 — Connect 4 Game -->
     <div class="projectCard" data-index="01">
-      <div class="projectCardInner">
+      <div data-aos="flip-left" class="projectCardInner">
 
         <div class="projectCardTop">
           <span class="projectCardNumber">01</span>
@@ -344,7 +345,7 @@
 
     <!-- PROJECT 2 — JavaFX POS System -->
     <div class="projectCard" data-index="02">
-      <div class="projectCardInner">
+      <div data-aos="flip-right" class="projectCardInner">
 
         <div class="projectCardTop">
           <span class="projectCardNumber">02</span>
@@ -381,7 +382,7 @@
 
     <!-- PROJECT 3 — CLI POS System -->
     <div class="projectCard" data-index="03">
-      <div class="projectCardInner">
+      <div data-aos="flip-left" class="projectCardInner">
 
         <div class="projectCardTop">
           <span class="projectCardNumber">03</span>
@@ -418,7 +419,7 @@
 
     <!-- PROJECT 4 — Chat Application -->
     <div class="projectCard" data-index="04">
-      <div class="projectCardInner">
+      <div data-aos="flip-right" class="projectCardInner">
 
         <div class="projectCardTop">
           <span class="projectCardNumber">04</span>
@@ -460,21 +461,23 @@
 <section class="academicTasksSection" id="academic_tasks">
 
   <div class="academicTitle">
-    <div class="academicTitleLeft">
+    <div data-aos="fade-down-right" class="academicTitleLeft">
       <h1>ACADEMIC<br>TASKS</h1>
     </div>
-    <div class="academicTitleRight">
+    <div data-aos="fade-down-left" class="academicTitleRight">
       <h2>Classwork & Assignments</h2>
       <p>A collection of tasks completed during lectures and as homework</p>
     </div>
   </div>
 
-  <div class="academicTabBar">
+  <div data-aos="zoom-in" class="academicTabBar">
     <button class="academicTab active" data-assignment="1">Assignment 01 — HTML & CSS</button>
     <button class="academicTab" data-assignment="2">Assignment 02 — Animations</button>
   </div>
 
-  <div class="academicSlideshow">
+  <div data-aos="fade-down"
+       data-aos-easing="linear"
+       data-aos-duration="2000" class="academicSlideshow">
 
     <div class="filmStrip top">
       <span></span><span></span><span></span><span></span>
@@ -816,6 +819,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="js/app.js"></script>
 </body>
 

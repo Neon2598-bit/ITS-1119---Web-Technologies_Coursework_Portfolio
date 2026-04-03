@@ -596,12 +596,25 @@ html {
   flex: 1;
   min-width: 8rem;
   padding: 1.2rem 1rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+  inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutSection .littleBitOfWorkExp .skillsBox:hover,
+.aboutSection .littleBitOfWorkExp .workExpBox:hover,
+.aboutSection .littleBitOfWorkExp .projectsBox:hover {
+  border-color: rgba(177, 151, 252, 0.45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+  0 0 0 1px rgba(177, 151, 252, 0.2),
+  inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .aboutSection .littleBitOfWorkExp h4 {
   padding: 0;
@@ -614,37 +627,6 @@ html {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 1px;
-}
-
-/* =====================================================
-     GLOWING BORDER — exp boxes
-======================================================== */
-.aboutSection .littleBitOfWorkExp div::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  background: linear-gradient(
-    45deg,
-    #ff0000, #ff7300, #fffb00,
-    #48ff00, #00ffd5, #002bff,
-    #7a00ff, #ff00c8, #ff0000
-  );
-  background-size: 400%;
-  border-radius: 18px;
-  z-index: -1;
-  animation: glowing-button-85 6s linear infinite;
-}
-
-.aboutSection .littleBitOfWorkExp div::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 5, 25, 0.75);
-  border-radius: 16px;
-  z-index: -1;
 }
 
 /* =====================================================
