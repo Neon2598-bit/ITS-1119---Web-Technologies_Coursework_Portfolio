@@ -1,9 +1,3 @@
-// document.body.style.background = 'red';
-
-// ===========================
-//   HAMBURGER MENU
-// ===========================
-
 const btn = document.getElementById('hamburgerBtn');
 const navUl = document.querySelector('.HeroSectionNAVBar ul');
 
@@ -12,18 +6,12 @@ btn.addEventListener('click', () => {
   navUl.classList.toggle('nav-open');
 });
 
-// Close menu when a nav link is clicked
 navUl.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     btn.classList.remove('open');
     navUl.classList.remove('nav-open');
   });
 });
-
-
-// ===========================
-//   HERO ENTRANCE ANIMATION
-// ===========================
 
 (function () {
 
@@ -37,7 +25,6 @@ navUl.querySelectorAll('a').forEach(link => {
   const socialIcons = document.querySelectorAll('.HeroSectionSocialLinksGroup a');
   const cta        = document.querySelector('.HeroSectionMidContentButton');
 
-  // ── Hide everything immediately (before any paint) ──
   navBox.style.cssText    = 'opacity:0; top:-6rem;';
   plainEl.style.cssText   = 'opacity:0; transform:translateY(24px);';
   nameEl.style.cssText    = 'opacity:0;';
@@ -49,19 +36,16 @@ navUl.querySelectorAll('a').forEach(link => {
     icon.style.cssText = 'opacity:0; transform:scale(0.3) translateY(12px);';
   });
 
-  // ── Helper ──
   function reveal(el, delay, extraCSS = '') {
     setTimeout(() => {
       el.style.cssText = `transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); opacity:1; transform:translateY(0) scale(1); ${extraCSS}`;
     }, delay);
   }
 
-  // ── Inject cursor keyframes ──
   const cursorStyle = document.createElement('style');
   cursorStyle.textContent = `@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }`;
   document.head.appendChild(cursorStyle);
 
-  // ── Typewriter ──
   function typewrite(el, text, onDone) {
     el.style.opacity = '1';
     let i = 0;
@@ -87,10 +71,8 @@ navUl.querySelectorAll('a').forEach(link => {
     tick();
   }
 
-  // ── Sequence ──
   window.addEventListener('load', () => {
 
-    // 1. Navbar drops in
     setTimeout(() => {
       navBox.style.cssText = `
         position: fixed;
@@ -102,19 +84,14 @@ navUl.querySelectorAll('a').forEach(link => {
       `;
     }, 150);
 
-    // 2. "Hi, I Am"
     setTimeout(() => reveal(plainEl, 0), 500);
 
-    // 3. Name typewriter
     setTimeout(() => typewrite(nameEl, FULL_NAME), 800);
 
-    // 4. Subtitle
     reveal(heading2, 2050);
 
-    // 5. Tagline
     reveal(heading3, 2250);
 
-    // 6. Social icons — staggered bounce
     socialIcons.forEach((icon, i) => {
       setTimeout(() => {
         icon.style.cssText = `
@@ -125,7 +102,6 @@ navUl.querySelectorAll('a').forEach(link => {
       }, 2450 + i * 140);
     });
 
-    // 7. CTA button
     setTimeout(() => {
       cta.style.cssText = `
         transition: opacity 0.55s cubic-bezier(0.34,1.56,0.64,1), transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
@@ -133,14 +109,8 @@ navUl.querySelectorAll('a').forEach(link => {
         transform: scale(1);
       `;
     }, 2850);
-
   });
-
 })();
-
-// ===========================
-//   PARTICLES + PARALLAX
-// ===========================
 
 (function () {
 
@@ -185,7 +155,6 @@ navUl.querySelectorAll('a').forEach(link => {
   makeParticles();
   window.addEventListener('resize', () => { resize(); makeParticles(); });
 
-  // Track mouse over hero section only
   hero.addEventListener('mousemove', e => {
     const r = hero.getBoundingClientRect();
     mouseX = e.clientX - r.left;
@@ -218,19 +187,16 @@ navUl.querySelectorAll('a').forEach(link => {
       if (p.y < 0) p.y = H;
       if (p.y > H) p.y = 0;
 
-      // Glow near cursor
       const dist = Math.hypot(p.x - mouseX, p.y - mouseY);
       const proximity = dist < 100 ? (1 - dist / 100) : 0;
       const alpha = Math.min(1, p.alpha + proximity * 0.55);
       const radius = p.r + proximity * 2.5;
 
-      // Draw particle
       ctx.beginPath();
       ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
       ctx.fillStyle = p.color + alpha + ')';
       ctx.fill();
 
-      // Connect nearby particles with faint lines
       for (let j = i + 1; j < particles.length; j++) {
         const q = particles[j];
         const d = Math.hypot(p.x - q.x, p.y - q.y);
@@ -244,10 +210,30 @@ navUl.querySelectorAll('a').forEach(link => {
         }
       }
     }
-
     requestAnimationFrame(draw);
   }
-
   draw();
+})();
+
+(function () {
+
+  var cards = document.querySelectorAll('.projectCard');
+
+  if (!cards.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('card-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+  cards.forEach(function (card, i) {
+    card.style.transitionDelay = (i % 2) * 0.12 + 's';
+    observer.observe(card);
+  });
 
 })();
