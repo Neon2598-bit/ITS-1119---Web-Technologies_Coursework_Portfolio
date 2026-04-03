@@ -235,5 +235,4 @@ navUl.querySelectorAll('a').forEach(link => {
     card.style.transitionDelay = (i % 2) * 0.12 + 's';
     observer.observe(card);
   });
-
 })();
