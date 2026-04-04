@@ -32,20 +32,20 @@ navUl.querySelectorAll('a').forEach(link => {
     function tick() {
       if (i < text.length) {
         cursor.insertAdjacentText('beforebegin', text[i++]);
-        setTimeout(tick, 60);
+        setTimeout(tick, 100);
       } else {
         setTimeout(() => {
-          cursor.style.transition = 'opacity 0.4s ease';
+          cursor.style.transition = 'opacity 1s ease';
           cursor.style.opacity = '0';
-          setTimeout(() => cursor.remove(), 400);
-        }, 500);
+          setTimeout(() => cursor.remove(), 500);
+        }, 600);
       }
     }
     tick();
   }
 
   window.addEventListener('load', () => {
-    setTimeout(() => typewrite(nameEl, FULL_NAME), 400);
+    setTimeout(() => typewrite(nameEl, FULL_NAME), 500);
   });
 
 })();
