@@ -47,12 +47,7 @@ navUl.querySelectorAll('a').forEach(link => {
   window.addEventListener('load', () => {
     setTimeout(() => typewrite(nameEl, FULL_NAME), 500);
   });
-
 })();
-
-// ===========================
-//   P5.JS BACKGROUND SKETCH
-// ===========================
 
 new p5(function (p) {
 
@@ -61,7 +56,7 @@ new p5(function (p) {
   const COLOR_GREEN = 53;
   const COLOR_BLUE = 243;
   const STARTING_ALPHA = 255;
-  const BACKGROUND_COLOR = 13;
+  // const BACKGROUND_COLOR = 13;
   const PROB_OF_NEIGHBOR = 0.5;
   const AMT_FADE_PER_FRAME = 5;
   const STROKE_WEIGHT = 1;

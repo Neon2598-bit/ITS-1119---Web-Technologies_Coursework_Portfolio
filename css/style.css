@@ -376,11 +376,11 @@ html {
 /* ===========================
    MOBILE (max 768px)
 =========================== */
-@media (max-width: 768px) {
+@media (max-width: 949px) {
 
   .HeroSection {
-    padding-top: 8rem;
-    justify-content: flex-start;
+    padding-top: 0;
+    justify-content: center;
   }
 
   .HeroSectionBoxNav {
@@ -449,7 +449,7 @@ html {
   .HeroSectionMidWrapper {
     gap: 1rem;
     padding: 0 1.5rem;
-    margin-top: 11rem;
+    margin-top: 5rem;
   }
 
   .HeroSectionTitle1 {
